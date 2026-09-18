@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weatherly — Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">☁</span><span>Weatherly</span></a>
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="cityInput" type="text" placeholder="Search city..." autocomplete="off">
+        <button id="searchBtn">Search</button>
+      </div>
+      <button id="unitBtn" class="unit-btn" type="button">°C</button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CURRENT WEATHER</p>
+        <h1 id="locationName">New Delhi, India</h1>
+        <p class="updated" id="updatedText">Loading weather...</p>
+      </div>
+      <div class="hero-weather">
+        <div class="weather-icon" id="currentIcon">☁️</div>
+        <div>
+          <div class="temperature"><span id="temperature">--</span><sup>°</sup></div>
+          <p class="condition" id="condition">Waiting for weather data</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span class="stat-icon">🌡️</span><div><small>Feels like</small><strong id="feelsLike">--°</strong></div></article>
+      <article class="stat-card"><span class="stat-icon">💧</span><div><small>Humidity</small><strong id="humidity">--%</strong></div></article>
+      <article class="stat-card"><span class="stat-icon">💨</span><div><small>Wind</small><strong id="wind">-- km/h</strong></div></article>
+      <article class="stat-card"><span class="stat-icon">👁️</span><div><small>Visibility</small><strong id="visibility">-- km</strong></div></article>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">FORECAST</p><h2>Hourly Forecast</h2></div>
+        <span id="todayLabel" class="section-note">Today</span>
+      </div>
+      <div class="hourly-list" id="hourlyList"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading"><div><p class="eyebrow">NEXT 7 DAYS</p><h2>Daily Forecast</h2></div></div>
+      <div class="daily-list" id="dailyList"></div>
+    </section>
+
+    <p class="error" id="errorMessage"></p>
+    <footer>Weather data powered by WeatherAPI</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
